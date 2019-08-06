@@ -111,10 +111,50 @@ class Book(persistent.Persistent):
     self._p_changed = True
 ```
 
-```
-```
+```py
+transaction.abort()
+
+import transaction
+transaction.commit()
+
+import account
+root.acount1 = account.Account()
+
+import account, BTrees.OOBTree
+root.accounts = BTrees.OOBTree.BTree()
+root.accounts['account-1'] = Account()
+root.accounts = AccountManagementApplication()
+
+db = ZODB.DB('mydata.fs')
+
+memory_db = ZODB.DB(None)
+
+connection = ZODB.connection('mydata.fs')
+memory_connection = ZODB.connection(None)
+
+import ZODB, ZODB.FileStorage
+storage = ZODB.FileStorage.FielStorage('mydata.fs')
+db = ZODB.DB(storage)
+connection = db.open()
+root = connection.root
+
+import persistent
+
+class Account(persistent.Persistent):
+  def __init__(self):
+    self.balance = 0.0
+    
+  def deposit(self, amount):
+    self.balance += account
+    
+  def cahs(self, amount):
+    assert amount < self.balance
+    self.balance -= amount
 
 ```
+
+```sh
+pip install ZODB
 ```
 
 
